@@ -14,6 +14,12 @@ Just run the `run` script; it should correctly initialize the environment at the
 
 Make sure to customize both _Cargo.toml_ and _package.json_
 
+Moreover, if you rename the project/folder accordingly, you have to remeber to change also the filenames in _main.js_
+
+In short: wherever you see `"yew-devenv"`, `yew_devenv.js` or `yew_devenv_bg.wasm` you have to substitute with the name of your project (example if the first becomes `"awesome-project"`, you have to substitute in _main.js_ also `awesome_project.js` and `awesome_project_bg.wasm` respectively)
+
+### Caveat: Cleanup
+
 Sometimes the hot-reload server or the `thttp` server just stay up, while building fails, etc.
 In case of "zombie" servers, try to fix it with `--clean`
 

@@ -1,9 +1,18 @@
-use yew::{html, Callback, Html, MouseEvent};
-use yewtil::function_component;
+use yew::{html, Callback, Html, MouseEvent, Properties};
+use yewtil::{Pure, PureComponent};
 
-#[function_component(Button)]
-pub fn button(onsignal: &Callback<MouseEvent>, #[prop_or_default] title: String) -> Html {
-    html! {
-        <button onclick=onsignal>{ title }</button>
+pub type Button = Pure<PureButton>;
+
+#[derive(Clone, PartialEq, Properties)]
+pub struct PureButton {
+    pub onsignal: Callback<MouseEvent>,
+    pub title: String,
+}
+
+impl PureComponent for PureButton {
+    fn render(&self) -> Html {
+        html! {
+            <button onclick=&self.onsignal>{ &self.title }</button>
+        } 
     }
 }
