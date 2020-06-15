@@ -90,8 +90,9 @@ if [ -f .serverpid ]; then
     exit 1
 fi
 
-# Use Cargo.lock as test of a fresh install
-if [ ! -f Cargo.lock ]; then
+# Test of a fresh install
+if [ -f .init ]; then
+    rm .init
     mkdir pkg 2>/dev/null
     cargo install thttp
     cargo install wasm-pack

@@ -1,6 +1,6 @@
 {
   "name": "yew-devenv",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Yew Development Environment (Rust + Yew + Node + Rollup)",
   "main": "main.js",
   "scripts": {
